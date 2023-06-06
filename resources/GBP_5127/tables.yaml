@@ -1,0 +1,15 @@
+databaseChangeLog:
+- changeSet:
+    id: GBP_5127_01
+    author: Unknown
+    dbms: oracle, hsqldb
+    changes:
+    - addColumn:
+        tableName: skrillteller_migrated_users
+        columns:
+        - column:
+            name: last_login_date
+            type: varchar2(100)
+            remarks: last login date of the migrated user
+            constraints:
+              nullable: true

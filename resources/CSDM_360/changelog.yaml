@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - include:
+      file: db/uspr/changelog/CSDM_360/tables.yaml

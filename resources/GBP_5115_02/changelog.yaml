@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/uspr/changelog/GBP_5115_02/constraints.yaml
+  - include:
+      file: db/uspr/changelog/GBP_5115_02/data.sql

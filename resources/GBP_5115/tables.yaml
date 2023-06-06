@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: GBP_5115_01
+      author: Nagaraju
+      dbms: 'oracle, hsqldb'
+      changes:
+        - createTable:
+            remarks: "GBP_5115: To represent user summary data.
+                  Author: Nagaraju
+                  Date: 2020-08-20.
+                  Volume Info: Initial: 0 records, Growth Rate: 100 records/month."
+            tableName: uspr_user_summary
+            columns:
+              - column:
+                  name: login_name
+                  type: varchar2(100)
+                  remarks: login name of the user.
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_summary
+                  type: blob
+                  remarks: used to store the userSummary json data.
+                  constraints:
+                    checkConstraint: ENSURE_JSON CHECK (user_summary IS JSON)               
+  - changeSet:
+      id: GBP_5115_02
+      author: Nagaraju
+      dbms: oracle
+      changes:
+        - sql:
+            sql: >-
+              grant select, insert, update, delete on uspr_user_summary to
+              ${liquibase.schema}_rw
+        - sql:
+            sql: 'grant select on uspr_user_summary to ${liquibase.schema}_ro'
+  - changeSet:
+      id: GBP_5115_03
+      author: Nagaraju
+      dbms: oracle
+      changes:
+        - sql:
+            sql: >-
+              create or replace synonym ${liquibase.schema}txn.uspr_user_summary
+              for uspr_user_summary

@@ -1,0 +1,10 @@
+databaseChangeLog:
+- changeSet:
+    id: GBP_6957
+    author: unknown
+    dbms: oracle, hsqldb
+    changes:
+      - modifyDataType:
+          columnName: permissions
+          newDataType: varchar(4000)
+          tableName: audit_user_event_resource

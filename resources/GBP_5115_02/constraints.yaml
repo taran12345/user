@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: GBP_5115_02_removing
+      author: unknown
+      dbms: oracle, hsqldb
+      changes:
+        - dropPrimaryKey:
+            columnNames: login_name
+            constraintName: uspr_user_summary_pk
+            tableName: uspr_user_summary

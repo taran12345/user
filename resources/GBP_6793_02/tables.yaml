@@ -1,0 +1,17 @@
+databaseChangeLog:   
+  - changeSet:
+      id: GBP_6793_02_01
+      author: Nagaraju
+      dbms: oracle, hsqldb
+      changes:
+      - addColumn:    
+          columns:          
+          - column:
+              name: user_id
+              type: varchar2(50)
+              remarks: id of user.
+          - column:
+              name: application
+              type: varchar2(50)
+              remarks: name of the application.                                 
+          tableName: uspr_user_tokens

@@ -1,0 +1,27 @@
+databaseChangeLog:   
+  - changeSet:
+      id: CSDM_360_0
+      author: nagaraju
+      dbms: oracle, hsqldb
+      changes:
+      - addColumn:
+          tableName: audit_user_event
+          columns:
+          - column:
+              name: target_user_id
+              type: varchar2(50) 
+              constraints:
+                nullable: true
+                
+  - changeSet:
+      id: CSDM_360_1
+      author: nagaraju
+      dbms: oracle, hsqldb
+      changes:
+        - createIndex:
+            columns: 
+            - column: 
+                name: target_user_id
+            indexName: aue_tuid_idx
+            tableName: audit_user_event
+            uniques: false

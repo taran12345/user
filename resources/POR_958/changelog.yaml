@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - include:
+      file: db/uspr/changelog/POR_958/data.sql

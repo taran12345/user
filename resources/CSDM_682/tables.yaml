@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: CSDM_682_01
+      author: tarangangil
+      dbms: 'oracle, hsqldb'
+      changes:
+        - modifyDataType:
+            columnName: permissions
+            newDataType: varchar2(6000)
+            tableName: audit_user_event_resource

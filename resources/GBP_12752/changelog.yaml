@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - include:
+      file: db/uspr/changelog/GBP_12752/data.sql

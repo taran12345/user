@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: GBP_6793_02_01
+      author: Nagaraju
+      dbms: oracle, hsqldb
+      changes:
+        - createIndex:
+            columns: 
+            - column: 
+                name: login_name
+                type: varchar2(100)
+            - column:
+                name: token
+                type: varchar2(64)
+            - column:
+                name: token_type
+                type: varchar2(30)
+            - column:
+                name: application
+                type: varchar2(50)
+            indexName: uspr_ut_ln_t_ty_a_i
+            tableName: uspr_user_tokens
+            uniques: false

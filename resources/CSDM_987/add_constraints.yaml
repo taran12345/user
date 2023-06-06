@@ -1,0 +1,71 @@
+databaseChangeLog:
+  - changeSet:
+      id: CSDM-987-primarykey-1
+      author: Arka
+      dbms: oracle
+      context: mtl-dev, mtl-qa
+      preConditions:
+        onFail: CONTINUE
+        not:
+          primaryKeyExists:
+            - tableName: uspr_user_tokens
+            - primaryKeyName: pk_user_tokens
+      changes:
+        - addPrimaryKey:
+            columnNames: login_name, token
+            constraintName: pk_user_tokens
+            tableName: uspr_user_tokens
+
+  - changeSet:
+      id: CSDM-987-primarykey-2
+      author: Arka
+      dbms: oracle
+      context: mtl-dev, mtl-qa
+      preConditions:
+        onFail: CONTINUE
+        not:
+          primaryKeyExists:
+            - tableName: uspr_user_summary
+            - primaryKeyName: pk_user_summary
+      changes:
+        - addPrimaryKey:
+            columnNames: user_id
+            constraintName: pk_user_summary
+            tableName: uspr_user_summary
+
+  - changeSet:
+      id: CSDM-987-primarykey-3
+      author: Arka
+      dbms: oracle
+      context: mtl-dev, mtl-qa
+      preConditions:
+        onFail: CONTINUE
+        not:
+          primaryKeyExists:
+            - tableName: user_accessgroups_mapping
+            - primaryKeyName: pk_user_acc_grp_mapping
+      changes:
+        - addPrimaryKey:
+            columnNames: login_name, acc_grp_code
+            constraintName: pk_user_acc_grp_mapping
+            tableName: user_accessgroups_mapping
+
+  - changeSet:
+      id: CSDM-987-create-index
+      author: Arka
+      dbms: oracle
+      context: mtl-dev, mtl-qa
+      preConditions:
+        onFail: CONTINUE
+        not:
+          indexExists:
+            - tableName: uspr_users
+            - indexName: idx_users_login_name
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: login_name
+            indexName: idx_users_login_name
+            tableName: uspr_users
+            uniques: false

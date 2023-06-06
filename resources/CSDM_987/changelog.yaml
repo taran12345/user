@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/uspr/changelog/CSDM_987/delete_duplicate_records.sql
+  - include:
+      file: db/uspr/changelog/CSDM_987/add_constraints.yaml

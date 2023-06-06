@@ -1,0 +1,5 @@
+databaseChangeLog:
+- include:
+    file: db/uspr/changelog/GBP_6793/tables.yaml
+- include:
+    file: db/uspr/changelog/GBP_6793/data.sql

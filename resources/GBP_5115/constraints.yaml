@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: GBP_5115_01
+      author: unknown
+      dbms: oracle, hsqldb
+      changes:
+        - addPrimaryKey:
+            columnNames: login_name
+            constraintName: uspr_user_summary_pk
+            tableName: uspr_user_summary

@@ -1,0 +1,258 @@
+databaseChangeLog:
+  ###############################################
+  ## To initialize the liquibase.schema variable.
+  ###############################################
+  - property:
+      name: liquibase.schema
+      value: uspr
+      dbms: oracle
+      
+      
+  ###############################################
+  ## To initialize the type table variables.
+  ###############################################
+  - include:
+      file: db/framework/changelog/type-table-properties.yaml
+      
+  - include:
+      file: db/uspr/changelog/UPF_457/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_3011/changelog.yaml
+      
+  - include:
+      file: db/uspr/changelog/GBP_3159/changelog.yaml
+      
+  - include:
+      file: db/uspr/changelog/GBP_3191/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_3191_03/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_3811/changelog.yaml
+      
+  - include:
+      file: db/uspr/changelog/GBP_4302/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_4420/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_4496/changelog.yaml
+      
+  - include:
+      file: db/uspr/changelog/GBP_4495/changelog.yaml
+
+#  - include:
+#      file: db/uspr/changelog/GBP_4653/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_4961/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_5127/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_5557/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_5115/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_5115_02/changelog.yaml
+      
+#  - include:
+#      file: db/uspr/changelog/GBP_5115_03/changelog.yaml
+      
+  - include:
+      file: db/uspr/changelog/GBP_5957/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_5606/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_5613/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_5914/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_5612/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_6094/changelog.yaml
+      
+  - include:
+      file: db/uspr/changelog/GBP_6309/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_6599/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_6275/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_6793/changelog.yaml
+      
+  - include:
+      file: db/uspr/changelog/GBP_6793_02/changelog.yaml
+      
+  - include:
+      file: db/uspr/changelog/GBP_6957/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_7659/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_10268/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_10138/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_10144/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_10144_02/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_10139/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_10745/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_10745_2/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_9981/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_10894/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_10145/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_10898/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_11039/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_11021/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_11039_02/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_11368/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_11425/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_11425_02/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_11498/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_11498_1/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_11498_2/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_12218/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_12342/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_12410/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_12752/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_12752_1/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/CSDM_360/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_12934/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/POR_346/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/POR_182/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/POR_447/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/CSDM_941/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/POR_682/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/CSDM_1001/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/POR_865/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/CSDM_987/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/POR_930/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/CSDM_1105/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/POR_1129/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/POR_952/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/POR_954/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/POR_958/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/POR_1234/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/POR_863/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/POR_1439/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_11477/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/CSDM_1500/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/GBP_12764/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/POR_2189/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/CSDM_2209/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/CSDM_2268/changelog.yaml
+
+  - include:
+      file: db/uspr/changelog/POR_3477/changelog.yaml
