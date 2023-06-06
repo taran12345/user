@@ -1,0 +1,94 @@
+info:
+  app:
+    name: ${spring.application.name}
+    description:  '@application.description@'
+    version: '@application.version@'
+    group: '@application.group@'
+    gitCurrentBranch: '@application.current.branch@'
+    gitChangeSet: '@application.latest.revision@'
+    buildDate: '@application.timestamp@'
+    restApi: true
+    usingDatabase: true
+
+spring:
+  datasource:
+    dataSourceClassName: oracle.jdbc.pool.OracleDataSource
+    url: ${datasource.url:jdbc:oracle:thin:@192.168.56.101:1521/orcl}
+    username: ${db_username:usprtxn}
+    password: ${db_password:usprisnice}
+    connectionTimeout: ${datasource.connection.timeout:45000}
+    maxLifetime: ${datasource.max.lifetime:28000000}
+    maximumPoolSize: ${datasource.maximum.pool_size:20}
+    cachePrepStmts: ${datasource.cache.prep.stmts:true}
+    prepStmtCacheSize: ${datasource.prep.stmt.cache.size:250}
+    prepStmtCacheSqlLimit: ${datasource.prep.stmt.cache.sql.limit:2048}
+    useServerPrepStmts: ${datasource.use.server.prep.stms:true}
+  jpa:
+    database: ORACLE
+    show-sql: false
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle12cDialect
+        id:
+          new_generator_mappings: true
+        connection:
+          handling_mode: DELAYED_ACQUISITION_AND_RELEASE_AFTER_TRANSACTION
+      jadira:
+        usertype:
+          javaZone: UTC
+          databaseZone: UTC
+  liquibase:
+    contexts: ${deployment.environment.name}
+    change-log: classpath:db/uspr/changelog/db.changelog-master.yaml
+    enabled: false
+
+deployment:
+  environment:
+    name: ${deployment.environment:local}
+feign:
+  hystrix:
+    enabled: false
+  client:
+    config:
+      default:
+        connectTimeout: 15000
+        readTimeout: 15000
+hystrix:
+  command:
+    default:
+      fallback:
+        enabled: false
+      circuitBreaker:
+        enabled: false
+
+migration:
+  shouldDoCompleteUserMigration: true
+
+adminshell:
+  resetPasswordHostUiUrl: dummy
+  skrillResetPasswordHostUiUrl: dummy
+  netellerResetPasswordHostUiUrl: dummy
+  selfEmailResetPasswordEventId: dummy
+  authContactEmailResetPasswordEventId: dummy
+  selfEmailResetPasswordSkrillEventId: dummy
+  selfEmailResetPasswordNetellerEventId: dummy
+
+httpclient:
+  proxyEnabled: ${proxyEnabled:true}
+  proxyUrl: ${proxyUrl:proxy.dev.stp.local}
+  proxyPort: ${proxyPort:9443}
+  connectionsPerRoute: ${connectionsPerRoute:20}
+  totalConnections: ${totalConnections:40}
+  connectionTimeout: ${connectionTimeout:40000}
+  socketTimeout: ${socketTimeout:40000}
+  connectionRequestTimeout: ${connectionRequestTimeout:40000}
+
+masker:
+  mask:
+    fields:
+    - password
+    - email
+    - phone
