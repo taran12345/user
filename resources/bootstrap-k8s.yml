@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: paysafe-upf-user-provisioning
+  cloud:
+    config:
+      enabled: false
+      discovery:
+        enabled: false
+    kubernetes:
+      ribbon:
+        mode: SERVICE
+      reload:
+        enabled: true
+    vault:
+      generic:
+        enabled: false
+  jackson:
+    time-zone: UTC
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 8398
+
+
+eureka:
+  client:
+    enabled: false
+
+management:
+  health:
+    elasticsearch:
+      enabled: false
+  endpoint:
+    restart:
+      enabled: true
